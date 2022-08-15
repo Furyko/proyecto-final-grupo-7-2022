@@ -7,7 +7,7 @@ Pasos para ejecutar el proyecto localmente:
   pip install -r requirements/base.txt
 ```
 - Iniciar la base de datos PostgreSQL.
-- Añadir en settings/base.py la información de la base de datos iniciada.
+- Añadir en settings/local.py la información de la base de datos iniciada.
 - Ejecutar el proyecto desde la raiz:
 ```
   python manage.py runserver
