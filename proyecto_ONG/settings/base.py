@@ -22,11 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4#=qp+v&v=4_m2khixm)5bnh+2%_(durv*g_l4b55#3c8@sd0n'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -68,21 +63,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'proyecto_ONG.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ONG',
-        'USER': 'proyecto_ong',
-        'PASSWORD': 'infoc4g7',
-        'HOST': 'localhost',
-        'PORT':'5432'
-    }
-}
 
 
 # Password validation
