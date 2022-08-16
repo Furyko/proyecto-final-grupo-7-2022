@@ -1,36 +1,32 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-
-class Usuario(models.User):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    user_name = models.CharField(max_length=200)
-    password = models.CharField(max_length=20)
-    email = models.CharField(max_length=40)
-    telefono = models.IntegerField(max_length=15)
-    localidad = models.CharField(max_length=200)
-    provincia = models.CharField(max_length=200)
-    anio_nacimiento = models.IntegerField(max_length=4)
-    mes_nacimiento = models.IntegerField(max_length=2)
-    dia_nacimiento = models.IntegerField(max_length=2)
-
-class Costo(models.Model):
-    precio = models.IntegerField(max_length=50)
+class Usuario(AbstractUser):
+    email = models.CharField(max_length=320)
+    telefono = models.IntegerField(blank=True, null=True)
+    localidad = models.CharField(max_length=60)
+    provincia = models.CharField(max_length=60)
+    fecha_nacimiento = models.DateField(blank=True, null=True)
 
 class Modalidad(models.Model):
     nombre = models.CharField(max_length=50)
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=50)
+
 class Evento(models.Model):
-    nombre = models.CharField(max_length=100)
-    detalle = models.CharField(max_length=500)
+    nombre = models.CharField(max_length=64)
+    detalle = models.TextField(max_length=500)
+    calle = models.CharField(max_length=60)
+    numero_calle = models.IntegerField()
+    localidad = models.CharField(max_length=60)
+    provincia = models.CharField(max_length=60)
+    fecha = models.DateField(auto_now=False, auto_now_add=False)
     horario = models.TimeField(auto_now=False, auto_now_add=False)
-    calle = models.CharField(max_length=200)
-    numero_calle = models.IntegerField(max_length=10)
-    localidad = models.CharField(max_length=200)
-    provincia = models.CharField(max_length=200)
-    anio_evento = models.IntegerField(max_length=4)
-    mes_evento= models.IntegerField(max_length=2)
-    dia_evento = models.IntegerField(max_length=2)
-    costo_id = models.ForeignKey(Costo)
-    modalidad_id = models.ForeignKey(Modalidad)
+    costo = models.CharField(max_length=20)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    link = models.CharField(max_length=1000)
+    modalidad_id = models.ForeignKey(Modalidad, on_delete=models.DO_NOTHING)
+    categoria_id = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+    participantes = models.ManyToManyField(Usuario)
