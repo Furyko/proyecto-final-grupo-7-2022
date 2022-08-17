@@ -12,8 +12,14 @@ class Usuario(AbstractUser):
 class Modalidad(models.Model):
     nombre = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.nombre
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre
 
 class Evento(models.Model):
     nombre = models.CharField(max_length=64)
@@ -30,3 +36,6 @@ class Evento(models.Model):
     modalidad_id = models.ForeignKey(Modalidad, on_delete=models.DO_NOTHING)
     categoria_id = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(Usuario)
+
+    def __str__(self):
+        return self.nombre
