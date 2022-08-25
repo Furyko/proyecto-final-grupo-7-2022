@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'eventos',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'proyecto_ONG.wsgi.application'
 
+AUTH_USER_MODEL = 'eventos.Usuario'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -103,6 +105,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / '/static/'
+STATIC_DIRS = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+    STATIC_DIRS
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
