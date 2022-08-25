@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def Inicio(request):
     template_name = "inicio.html"
     return render(request, template_name, {})
