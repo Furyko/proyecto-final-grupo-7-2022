@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "base/head.html" %}
+
+<body>
+    {% include "base/navbar.html" %}
+    <!-- Section: Design Block -->
+    <section class=" text-center text-lg-start">
+        <style>
+            .rounded-t-5 {
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+
+            @media (min-width: 992px) {
+                .rounded-tr-lg-0 {
+                    border-top-right-radius: 0;
+                }
+
+                .rounded-bl-lg-5 {
+                    border-bottom-left-radius: 0.5rem;
+                }
+            }
+        </style>
+        <div class="card mb-3">
+            <div class="row g-0 d-flex align-items-center">
+                <div class="col-lg-4 d-none d-lg-flex">
+                    {% load static %}
+                    <img src="{% static 'img_login.jpg' %}" alt="Trendy Pants and Shoes" class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+                </div>
+                <div class="col-lg-8">
+                    <div class="card-body py-5 px-md-5">
+                        <form method="POST">{% csrf_token %}
+                            {% include 'includes/error_forms.html' %}
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+                                <label for="floatingInput">Usuario</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            
+                            <!-- 2 column grid layout for inline styling -->
+                            <div class="row mb-4">
+                                <div class="col d-flex justify-content-center">
+                                    <!-- Checkbox -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="form2Example31"
+                                            checked />
+                                        <label class="form-check-label" for="form2Example31"> Recordar contraseña </label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <!-- Simple link -->
+                                    <a href="#!">¿Se te olvido tu contraseña?</a>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="button" class="btn btn-primary btn-block mb-4">Iniciar sesión</button>
+
+                            <!--Registro-->
+                            <p> ¿No tiene una cuenta? <a href="" class="link-info">Registrese aquí</a></p>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section: Design Block -->
+</body>
+
+</html>

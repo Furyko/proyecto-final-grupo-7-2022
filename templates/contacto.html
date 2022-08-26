@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.html" %}
+
+<body>
+    {% include "navbar.html" %}
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image"
+        style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
+        <div class="mask" style="background-color: rgba(218, 205, 205, 0.726);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-black">
+                    <h1 class="mb-3">Contactos</h1>
+                    <h3 class="mb-3 fst-italic">Puedes usar los siguientes medios para contactarnos</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- Background image -->
+
+    <div class="row m-0">
+        <!-- Datos de Contacto -->
+        <div class="col-md-4 m-5 fs-5">
+            <h3 class="mb-4 text-center">Datos de Contacto</h3>
+            <div class="mb-3">
+                <i class="bi bi-geo-alt-fill"> Av. España 395. Barranqueras. Chaco </i> 
+            </div>
+            <div class="mb-3">
+                <i class="bi bi-envelope-fill"> Email: fundacionpueblochaco@gmail.com </i>
+            </div>
+            <div class="mb-3">
+                <i class="bi bi-facebook"> Facebook: @fundacion.pueblo </i>
+            </div>
+            <div class="mb-3">
+                <i class="bi bi-instagram"> Instagram: @fundacion.pueblo </i>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.460957378129!2d-58.954031900000004!3d-27.486036299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x944572cde861393d%3A0xcdda960dff8f3f4c!2sAv.%20Espa%C3%B1a%20395%2C%20H3503%20Barranqueras%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1661450611690!5m2!1ses-419!2sar" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="col-md-6 m-5">
+            <!-- Formulario -->
+            <h3 class="mb-4 text-center">Contactanos</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="nya" class="form-label txt_negrita">Nombres y Apellidos</label>
+                    <input type="text" class="form-control" id="nya" aria-describedby="nyaHelp" required>
+
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label txt_negrita">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+
+                </div>
+                <div class="mb-3">
+                    <label for="asunto" class="form-label txt_negrita">Asunto</label>
+                    <input type="text" class="form-control" id="asunto" aria-describedby="asuntoHelp" required>
+
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label txt_negrita">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Aceptar</button>
+            </form>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+</body>
+
+</html>

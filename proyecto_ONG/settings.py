@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+import psycopg2.extensions
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +29,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "usuarios.Usuario"
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "home"
+#LOGOUT_REDIRECT_URL = "home"
+
+
 
 # Application definition
 
@@ -37,6 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios'
+    #'eventos'
+    #'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -76,11 +88,11 @@ WSGI_APPLICATION = 'proyecto_ONG.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ONG',
-        'USER': 'proyecto_ong',
-        'PASSWORD': 'infoc4g7',
+        'NAME': 'fundacion',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT':'5432'
+        'PORT':'5433'
     }
 }
 
@@ -107,9 +119,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-es'
+LANGUAGE_CODE = 'es-ar'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -121,8 +133,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / '/static/'
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
+#STATIC_URL = 'static/'
+#STATICFILES_DIRS = [STATIC_DIR,]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
