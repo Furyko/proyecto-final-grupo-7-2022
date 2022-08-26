@@ -13,6 +13,9 @@ urlpatterns = [
     path('', views.inicio, name= "home"),
     path('iniciar-sesion/',auth_views.LoginView.as_view(template_name="login.html"), name="login"),
     path('cerrar-sesion/',auth_views.logout_then_login, name="logout"),
+    path('eventos/', views.Eventos, name= 'eventos'),
+    path('recursos/', views.Recursos, name= 'recursos'),
+    path('contactos/', views.Contactos, name= 'contactos'),
     
 
 

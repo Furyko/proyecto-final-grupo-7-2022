@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card-body py-5 px-md-5">
-                        <form method="POST">{% csrf_token %}
+                        <form method="post">{% csrf_token %}
                             {% include 'includes/error_forms.html' %}
                             <!-- Email input -->
                             <div class="form-outline mb-4">
@@ -62,10 +62,10 @@
                             </div>
 
                             <!-- Submit button -->
-                            <button type="button" class="btn btn-primary btn-block mb-4">Iniciar sesión</button>
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Iniciar sesión</button>
 
                             <!--Registro-->
-                            <p> ¿No tiene una cuenta? <a href="" class="link-info">Registrese aquí</a></p>
+                            <p> ¿No tiene una cuenta? <a href="{% url 'usuarios:registro' %}" class="link-info">Registrese aquí</a></p>
                         </form>
 
                     </div>
