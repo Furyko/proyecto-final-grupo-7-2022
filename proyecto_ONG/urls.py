@@ -17,7 +17,9 @@ urlpatterns = [
     path('cerrar-sesion/',auth_views.logout_then_login, name="logout"),
     path('eventos/', views.Eventos, name= 'eventos'),
     path('recursos/', views.Recursos, name= 'recursos'),
+    #path('listar/', eventosList.as_view(), name="eventolistar"),
     #path('contactos/', views.Contactos, name='contactos'),
+
     
 
 
@@ -25,4 +27,5 @@ urlpatterns = [
         #includes
     path("usuarios/",include("usuarios.urls")),
     path("contactos/",include("contacto.urls")),
+    #path("eventos/",include("eventos.urls")),
     ]
