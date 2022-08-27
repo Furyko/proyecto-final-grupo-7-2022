@@ -9,10 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 import os
 from pathlib import Path
-import psycopg2.extensions
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,11 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4#=qp+v&v=4_m2khixm)5bnh+2%_(durv*g_l4b55#3c8@sd0n'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 AUTH_USER_MODEL = "usuarios.Usuario"
 
 LOGIN_URL = 'login'
@@ -36,7 +30,6 @@ LOGIN_REDIRECT_URL = 'home'
 #LOGOUT_REDIRECT_URL = "home"
 
 DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
-
 
 
 # Application definition
@@ -51,7 +44,7 @@ INSTALLED_APPS = [
     'usuarios',
     'eventos',
     'contacto',
-    #'crispy_forms',
+    
 ]
 
 MIDDLEWARE = [
@@ -84,20 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'proyecto_ONG.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fundacion',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT':'5433'
-    }
-}
 
 
 # Password validation
@@ -138,13 +117,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / '/static/'
-STATIC_DIR = os.path.join(BASE_DIR, "static")
+STATIC_DIRS = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
-    STATIC_DIR,
+    STATIC_DIRS
 ]
-
-#STATIC_URL = 'static/'
-#STATICFILES_DIRS = [STATIC_DIR,]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

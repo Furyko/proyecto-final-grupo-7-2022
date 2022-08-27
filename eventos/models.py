@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
+"""""
 class Usuario(AbstractUser):
     email = models.CharField(max_length=320)
     telefono = models.IntegerField(blank=True, null=True)
@@ -39,3 +39,4 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.nombre
+"""""
