@@ -12,8 +12,14 @@ class Usuario(AbstractUser):
 class Modalidad(models.Model):
     nombre = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.nombre
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre
 
 class Evento(models.Model):
     nombre = models.CharField(max_length=64)
@@ -31,9 +37,14 @@ class Evento(models.Model):
     categoria_id = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(Usuario)
 
+
 #Archivos media para descargar 
  
 class Document(models.Model):
     title = models.CharField(max_length = 200)
     uploadedFile = models.FileField(upload_to = "Uploaded Files/")
     dateTimeOfUpload = models.DateTimeField(auto_now = True)
+
+    def __str__(self):
+        return self.nombre
+
