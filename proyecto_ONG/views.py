@@ -15,9 +15,11 @@ def Recursos(request):
     template_name = "recursos.html"
     return render(request, template_name, {})
 
-def Contactos(request):
-    template_name= "contactos.html"
-    return render(request, template_name, {})
+
+
+
+
+
 
     
 """

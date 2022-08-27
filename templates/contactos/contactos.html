@@ -41,27 +41,28 @@
         <div class="col-md-6 m-5">
             <!-- Formulario -->
             <h3 class="mb-4 text-center">Contactanos</h3>
-            <form>
+            <form action="." method="post"> {% csrf_token %}
                 <div class="mb-3">
                     <label for="nya" class="form-label txt_negrita">Nombres y Apellidos</label>
-                    <input type="text" class="form-control" id="nya" aria-describedby="nyaHelp" required>
-
+                    <input type="text" class="form-control" id="nya" aria-describedby="nyaHelp" name="nombreyapellido" required >
+            
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label txt_negrita">Email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
-
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required >
+            
                 </div>
                 <div class="mb-3">
                     <label for="asunto" class="form-label txt_negrita">Asunto</label>
-                    <input type="text" class="form-control" id="asunto" aria-describedby="asuntoHelp" required>
-
+                    <input type="text" class="form-control" id="asunto" aria-describedby="asuntoHelp" name="asunto" required >
+            
                 </div>
                 <div class="mb-3">
                     <label for="mensaje" class="form-label txt_negrita">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                    <textarea class="form-control" id="mensaje" rows="3" name="mensaje" required ></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Aceptar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+
             </form>
         </div>
     </div>
