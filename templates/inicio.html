@@ -1,1 +1,56 @@
-<h1> Hola </h1>
+<!DOCTYPE html>
+<html lang="en">
+{% include 'base/head.html' %}
+
+<body>
+    {% include 'base/navbar.html' %}
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image" style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
+        <div class="mask" style="background-color: rgba(218, 205, 205, 0.726);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-black">
+                    <h1 class="mb-3">Fundación Pueblo</h1>
+                    <h4 class="mb-3">Bienvenido</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <!-- Background image -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card text-center bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Quienes somos</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas
+                        nihil similique fugit aut architecto, sequi rerum repellat ab aliquam, quae veritatis error ea,
+                        a obcaecati consequatur! Ducimus, at. Omnis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Mision</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas
+                        nihil similique fugit aut architecto, sequi rerum repellat ab aliquam, quae veritatis error ea,
+                        a obcaecati consequatur! Ducimus, at. Omnis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Vision</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas
+                        nihil similique fugit aut architecto, sequi rerum repellat ab aliquam, quae veritatis error ea,
+                        a obcaecati consequatur! Ducimus, at. Omnis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'base/footer.html' %}
+</body>
+
+</html>
