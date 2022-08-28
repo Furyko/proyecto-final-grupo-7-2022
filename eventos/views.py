@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from datetime import datetime
+from django.views import generic
 from .utils import Calendar
 
 
@@ -11,14 +12,23 @@ def Informacion(request):
     template_name = "eventos_info.html"
     return render(request, template_name, {})
 
-def Eventos(request):
-    current_year = datetime.today().year
-    current_month = datetime.today().month
-    calendar = Calendar(current_year, current_month).formatmonth(withyear=True)
-    template_name = "eventos.html"
-    return render(request, template_name, {
-        "calendar": calendar
-        })
+class EventosView(generic.ListView):
+    template_name = 'eventos.html'
+
+    def get(self, request):
+        current_year = datetime.today().year
+        current_month = datetime.today().month
+        calendar = Calendar(current_year, current_month).formatmonth(withyear=True)
+        return render(request, self.template_name, {
+            "calendar": calendar
+            })
+
+    def post(self, request):
+        print(request.POST)
+        calendar = Calendar(2022, int(request.POST['mes'])).formatmonth(withyear=True)
+        return render(request, self.template_name, {
+            "calendar": calendar
+            })
 
 def Recursos(request):
     template_name = "recursos.html"

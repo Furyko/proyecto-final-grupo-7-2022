@@ -1,12 +1,14 @@
+.calendar-container {
+    padding: 1rem;
+    width: 100%;
+}
+
 .calendar {
     border: 1px solid black;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-}
-
-.calendar td {
-    padding: 0.4rem;
+    width: 100%;
 }
 
 .event-day button {
@@ -21,4 +23,20 @@
 
 .event-day button:active {
     border: 1px solid red;
+}
+
+.calendar-options form {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-selectables {
+    display: flex;
+    justify-content: space-around;
+}
+
+.calendar-submit {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }
