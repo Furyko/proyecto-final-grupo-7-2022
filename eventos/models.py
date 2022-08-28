@@ -37,8 +37,7 @@ class Evento(models.Model):
     categoria_id = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(Usuario)
 
-#Archivos media para descargar     
-    #por formulario    
+#Archivos media para descargar   
     
 class Document(models.Model):
     title = models.CharField(max_length = 50)

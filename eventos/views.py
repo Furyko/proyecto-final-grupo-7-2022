@@ -6,7 +6,6 @@ import templates
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import Document
-from .forms import RecursosForm
 
 
 
@@ -70,9 +69,6 @@ def uploadFile(request):
 
     documents = models.Document.objects.all()
 
-    #return render(request, "eventos/upload-file.html", context = {
-    #    "files": documents
-        
     return render(request, "recursos_subir.html", context = {
         "files": documents
     })
