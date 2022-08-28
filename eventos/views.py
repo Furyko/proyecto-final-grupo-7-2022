@@ -66,8 +66,9 @@ def uploadFile(request):
             uploadedFile = uploadedFile
         )
         document.save()
-
+    
     documents = models.Document.objects.all()
+    
 
     return render(request, "recursos_subir.html", context = {
         "files": documents
