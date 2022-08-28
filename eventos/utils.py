@@ -16,8 +16,10 @@ class Calendar(HTMLCalendar):
             for event in events_per_day:
                 if event.fecha.day == day:
                     d += f'<li> {event.nombre} </li>'
-                    return f"<td class='event-day'><button><span class='date'>{day}</span><ul> {d} </ul></button></td>"
-            return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
+            if d != '':
+                return f"<td class='event-day'><button class='event-button'><span class='date'>{day}</span><ul> {d} </ul></button></td>"
+            else:
+                return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
         return '<td></td>'
 
     """Formatea una semana como tr"""
