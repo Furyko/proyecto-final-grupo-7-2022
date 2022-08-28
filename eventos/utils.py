@@ -27,12 +27,23 @@ class Calendar(HTMLCalendar):
             week += self.formatday(d, events)
         return f'<tr> {week} </tr>'
 
-    """Formatea un mes como un table. Filtra eventos por año y mes"""
+    """Formatea un mes como un table. Filtra eventos por año y mes, 
+    y por categoria si self.categoria no es None"""
     def formatmonth(self, withyear=True):
-        if self.month < 10:
-            events = Evento.objects.filter(fecha__contains=str(self.year) + "-" + "0" + str(self.month))
+        if self.categoria != None:
+            if self.month < 10:
+                events = Evento.objects.filter(
+                    fecha__contains=str(self.year) + "-" + "0" + str(self.month), 
+                    categoria_id=self.categoria)
+            else:
+                events = Evento.objects.filter(
+                    fecha__contains=str(self.year) + "-" + str(self.month),
+                    categoria_id=self.categoria)
         else:
-            events = Evento.objects.filter(fecha__contains=str(self.year) + "-" + str(self.month))
+            if self.month < 10:
+                events = Evento.objects.filter(fecha__contains=str(self.year) + "-" + "0" + str(self.month))
+            else:
+                events = Evento.objects.filter(fecha__contains=str(self.year) + "-" + str(self.month))
         calendar = f'<table id="calendar" class="calendar">\n'
         calendar += f'{self.formatmonthname(self.year, self.month, withyear=withyear)}\n'
         calendar += f'{self.formatweekheader()}\n'

@@ -42,9 +42,9 @@
                             <select
                             name="categoria"
                             id="categoria">
-                                <option value="" disabled selected>Categoría</option>
+                                <option value="" disabled selected>Categorías disponibles</option>
                                 {% for i in categorias %}
-                                <option value="{{i.nombre}}">{{i.nombre}}</option>
+                                <option value="{{i.id}}">{{i.nombre}}</option>
                                 {% endfor %}
                             </select>
                         </div>
