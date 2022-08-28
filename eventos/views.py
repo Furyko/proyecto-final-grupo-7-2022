@@ -55,6 +55,8 @@ def download (request,path):
 
 
 def uploadFile(request):
+    
+    subido = False
     if request.method == "POST":
         # Fetching the form data
         fileTitle = request.POST["fileTitle"]
@@ -67,9 +69,14 @@ def uploadFile(request):
         )
         document.save()
     
+        #documents = models.Document.objects.all()
+        return HttpResponseRedirect('/recursos?subido=True')
+    else:
+        if 'subido' in request.GET:
+            subido = True   
     documents = models.Document.objects.all()
     
-
     return render(request, "recursos_subir.html", context = {
-        "files": documents
-    })
+        "files": documents,
+        "subido": subido,
+        })
