@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from datetime import datetime
+from .utils import Calendar
 
 
 def Inicio(request):
@@ -10,8 +12,13 @@ def Informacion(request):
     return render(request, template_name, {})
 
 def Eventos(request):
+    current_year = datetime.today().year
+    current_month = datetime.today().month
+    calendar = Calendar(current_year, current_month).formatmonth(withyear=True)
     template_name = "eventos.html"
-    return render(request, template_name, {})
+    return render(request, template_name, {
+        "calendar": calendar
+        })
 
 def Recursos(request):
     template_name = "recursos.html"
