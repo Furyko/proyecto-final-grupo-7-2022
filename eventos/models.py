@@ -37,14 +37,15 @@ class Evento(models.Model):
     categoria_id = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(Usuario)
 
-
-#Archivos media para descargar 
- 
+#Archivos media para descargar     
+    #por formulario    
+    
 class Document(models.Model):
-    title = models.CharField(max_length = 200)
-    uploadedFile = models.FileField(upload_to = "Uploaded Files/")
+    title = models.CharField(max_length = 50)
+    uploadedFile = models.FileField(upload_to = 'media')
     dateTimeOfUpload = models.DateTimeField(auto_now = True)
-
+    
+    
     def __str__(self):
-        return self.nombre
+        return self.title
 

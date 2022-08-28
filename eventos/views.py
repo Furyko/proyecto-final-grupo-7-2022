@@ -1,6 +1,14 @@
+from pydoc import importfile
+from urllib import response
 from . import models
 from django.shortcuts import render
 import templates
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from .models import Document
+from .forms import RecursosForm
+
+
 
 
 def Inicio(request):
@@ -15,9 +23,6 @@ def Eventos(request):
     template_name = "eventos.html"
     return render(request, template_name, {})
 
-def Recursos(request):
-    template_name = "recursos.html"
-    return render(request, template_name, {})
 
 def Contactos(request):
     template_name= "contactos.html"
@@ -30,6 +35,25 @@ def Login(request):
 def Register(request):
     template_name= "register.html"
     return render(request, template_name, {})
+
+
+
+
+def Recursos(request):
+    context = {'file':models.Document.objects.all()}
+    template_name = "recursos.html"
+    return render(request, template_name, context)
+       
+    
+def download (request,path):
+    file_path=os.path.join(settings.MEDIA_ROOT,path)
+    if os.path.exists(file_path):
+        with open(file_path,'rb')as fh:
+            response=HttpResponse(fh.read(),content_type="application/adminupload")
+            response['Content-Disposition']='inline;filename='+os.path.basename(file_path)
+            return response
+    raise Http404
+
 
 def uploadFile(request):
     if request.method == "POST":
@@ -46,6 +70,9 @@ def uploadFile(request):
 
     documents = models.Document.objects.all()
 
-    return render(request, "eventos/upload-file.html", context = {
+    #return render(request, "eventos/upload-file.html", context = {
+    #    "files": documents
+        
+    return render(request, "recursos_subir.html", context = {
         "files": documents
     })

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'inicio' %}">
+        <a class="navbar-brand" href="/inicio">
             {% load static %}
             <img src="{% static 'logo_fund_pueblo.jpg' %}" alt="logo_ong" width="60" height="60"
                 class="d-inline-block align-text">
@@ -12,11 +12,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
-                <a class="nav-link" href="{% url 'eventos_info' %}">Eventos</a>
-                <a class="nav-link" href="{% url 'recursos' %}">Recursos</a>
-                <a class="nav-link" href="{% url 'contactos' %}">Contactos</a>
-                <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
+                <a class="nav-link" href="/inicio">Inicio</a>
+                <a class="nav-link" href="/eventos_info">Eventos</a>
+                <a class="nav-link" href="/recursos">Recursos</a>
+                <a class="nav-link" href="/contactos">Contactos</a>
+                <a class="nav-link" href="/login">Ingresar</a>
             </div>
         </div>
     </div>
