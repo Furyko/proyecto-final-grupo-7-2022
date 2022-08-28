@@ -23,7 +23,8 @@
                         <div class="calendar-selectables">
                             <select
                             name="mes"
-                            id="mes">
+                            id="mes"
+                            required>
                                 <option value="" disabled selected>Mes</option>
                                 <option value="1">Enero</option>
                                 <option value="2">Febero</option>
@@ -37,6 +38,14 @@
                                 <option value="10">Octubre</option>
                                 <option value="11">Noviembre</option>
                                 <option value="12">Diciembre</option>
+                            </select>
+                            <select
+                            name="categoria"
+                            id="categoria">
+                                <option value="" disabled selected>Categoría</option>
+                                {% for i in categorias %}
+                                <option value="{{i.nombre}}">{{i.nombre}}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="calendar-submit">

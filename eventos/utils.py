@@ -2,9 +2,10 @@ from calendar import HTMLCalendar
 from .models import Evento
 
 class Calendar(HTMLCalendar):
-    def __init__(self, year=None, month=None):
+    def __init__(self, year=None, month=None, categoria=None):
         self.year = year
         self.month = month
+        self.categoria = categoria
         super(Calendar, self).__init__()
 
     """Formatea un día como un td. Filtra eventos por día."""

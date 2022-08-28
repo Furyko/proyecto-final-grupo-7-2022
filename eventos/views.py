@@ -2,6 +2,7 @@ from django.shortcuts import render
 from datetime import datetime
 from django.views import generic
 from .utils import Calendar
+from .models import Categoria
 
 
 def Inicio(request):
@@ -19,15 +20,21 @@ class EventosView(generic.ListView):
         current_year = datetime.today().year
         current_month = datetime.today().month
         calendar = Calendar(current_year, current_month).formatmonth(withyear=True)
+        categorias = Categoria.objects.all()
         return render(request, self.template_name, {
-            "calendar": calendar
+            "calendar": calendar,
+            "categorias": categorias
             })
 
     def post(self, request):
-        print(request.POST)
-        calendar = Calendar(2022, int(request.POST['mes'])).formatmonth(withyear=True)
+        try: 
+            calendar = Calendar(2022, int(request.POST['mes']), request.POST['categoria']).formatmonth(withyear=True)
+        except:
+            calendar = Calendar(2022, int(request.POST['mes'])).formatmonth(withyear=True)
+        categorias = Categoria.objects.all()
         return render(request, self.template_name, {
-            "calendar": calendar
+            "calendar": calendar,
+            "categorias": categorias
             })
 
 def Recursos(request):
