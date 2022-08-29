@@ -1,3 +1,4 @@
+from ast import If
 from turtle import textinput
 from xml.dom.minidom import Attr
 from django import forms
@@ -11,3 +12,5 @@ class EventoForm(forms.ModelForm):
         model = Evento
         fields = ["nombre","lugar","precio","descripcion","provincia","localidad"]
         
+
+
