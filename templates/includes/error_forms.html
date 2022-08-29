@@ -12,4 +12,13 @@
     
     {% endfor %}
 
+    
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-info" role="alert">
+            {{error|safe}}
+        </div>
+        
+    {% endfor %}
+        
+
 {% endif %}

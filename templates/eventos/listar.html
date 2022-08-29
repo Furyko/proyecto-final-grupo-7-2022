@@ -3,7 +3,7 @@
 {% include "base/head.html" %}
 <body>
     {% include "base/navbar.html" %}
-
+            
             <!-- Background image -->
             <div class="p-5 text-center bg-image" style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
                 <div class="mask" style="background-color: rgba(218, 205, 205, 0.726);">
@@ -15,7 +15,37 @@
                 </div>
             </div>
             <br><br><br>
+            <a href="{% url 'eventos:crear' %}" class="btn btn-primary mb-3" >CREAR EVENTO</a>
             <!-- Background image -->
+            <table class="table table-info">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Eventos</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Precio($)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for eventos in eventos  %}
+                        <tr>
+                            <th scope="row">{{eventos.id}}</th>
+                            <td>{{eventos.nombre}}</td>
+                            <td>{{eventos.lugar}}</td>
+                            <td>{{eventos.precio}}</td>
+                            
+                            
+                        </tr>
+                    {% endfor %}
+                        
+                  
+                  
+                </tbody>
+              </table>
+            
+
+
 
     {% include "base/footer.html" %}
 </body>

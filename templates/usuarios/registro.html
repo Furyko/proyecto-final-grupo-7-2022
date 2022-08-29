@@ -52,14 +52,14 @@
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
                                     <input type="email" id="form3Example4" class="form-control" name="email">
-                                    <label class="form-label" for="form3Example4">Correo electronico</label>
+                                    <label class="form-label" for="form3Example4">Correo electronico</label>{{field.label}}:{{error|safe}}
                                 </div>
 
                                 <!-- 2 Columnas uno de numero de telefono y otro de cumpleaños -->
                                 <div class="row">
                                     <div class="col-md-8 mb-4">
                                         <input type="tel" id="form3Example5" class="form-control" name="telefono">
-                                        <label class="form-label" for="form3Example5">Numero de telefono</label>
+                                        <label class="form-label" for="form3Example5">Numero de telefono</label>{{field.label}}:{{error|safe}}
                                     </div>
 
                                     <div class="col-md-4 mb-4">
@@ -88,15 +88,15 @@
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
                                     <input type="password" id="form3Example9" class="form-control" name="password1">
-                                    <label class="form-label" for="form3Example9">Contraseña</label>
+                                    <label class="form-label" for="form3Example9">Contraseña</label>{{field.label}}:{{error|safe}}
                                 </div>
 
                                 <!-- Confirmación de contraseña -->
                                 <div class="form-outline mb-4">
                                     <input type="password" id="form3Example10" class="form-control" name="password2">
-                                    <label class="form-label" for="form3Example10">Confirme su contraseña</label>
+                                    <label class="form-label" for="form3Example10">Confirme su contraseña</label>{{field.label}}:{{error|safe}}
                                 </div>
-                                {% include 'includes/error_forms.html' %}
+                            {% include 'includes/error_forms.html' %}
                                 <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Suscribirse
