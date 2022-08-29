@@ -135,3 +135,11 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+#media
+proyecto_ONG/media/*.jpg
+proyecto_ONG/media/*.png
+proyecto_ONG/media/*.jpeg
+proyecto_ONG/media/*.pdf
+proyecto_ONG/media/*.docx
+proyecto_ONG/media/*.xlsx
