@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "head.html" %}
+{% include "base/head.html" %}
 <head>
     {% load static %}
     <script src="{% static 'js/scripts.js' %}"></script>
 </head>
 <body>
-    {% include "navbar.html" %}
+    {% include "base/navbar.html" %}
 
             <!-- Background image -->
             <div class="p-5 text-center bg-image" style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
@@ -67,6 +67,6 @@
                 </div>
             </div>
 
-    {% include "footer.html" %}
+    {% include "base/footer.html" %}
 </body>
 </html>

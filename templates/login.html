@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "head.html" %}
+{% include "base/head.html" %}
 
 <body>
-    {% include "navbar.html" %}
+    {% include "base/navbar.html" %}
     <!-- Section: Design Block -->
     <section class=" text-center text-lg-start">
         <style>
@@ -30,19 +30,25 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card-body py-5 px-md-5">
-                        <form>
+                        
+                        <form method="post">{% csrf_token %}
+                           {% include 'includes/error_forms.html' %}
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="form2Example1" class="form-control" />
-                                <label class="form-label" for="form2Example1">Correo electrónico</label>
+                                
+                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+                                <label for="floatingInput">Usuario</label>
+                                
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="form2Example2" class="form-control" />
-                                <label class="form-label" for="form2Example2">Contraseña</label>
+                                
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                                <label for="floatingPassword">Password</label>
+                                
                             </div>
-
+                         
                             <!-- 2 column grid layout for inline styling -->
                             <div class="row mb-4">
                                 <div class="col d-flex justify-content-center">
@@ -53,18 +59,19 @@
                                         <label class="form-check-label" for="form2Example31"> Recordar contraseña </label>
                                     </div>
                                 </div>
-
+                                    <!--
                                 <div class="col">
-                                    <!-- Simple link -->
+                                   
                                     <a href="#!">¿Se te olvido tu contraseña?</a>
                                 </div>
+                                    -->
                             </div>
-
+                            
                             <!-- Submit button -->
-                            <button type="button" class="btn btn-primary btn-block mb-4">Iniciar sesión</button>
-
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Iniciar sesión</button>
+                            
                             <!--Registro-->
-                            <p> ¿No tiene una cuenta? <a href="{% url 'register' %}" class="link-info">Registrese aquí</a></p>
+                            <p> ¿No tiene una cuenta? <a href="{% url 'usuarios:registro' %}" class="link-info">Registrese aquí</a></p>
                         </form>
 
                     </div>

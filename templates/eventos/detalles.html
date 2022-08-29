@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "base/head.html" %}
+<body>
+    {% include "base/navbar.html" %}
+
+            <!-- Background image -->
+            <div class="p-5 text-center bg-image" style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
+                <div class="mask" style="background-color: rgba(218, 205, 205, 0.726);">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-black">
+                            <h1 class="mb-3">Detalles Evento {{evento.nombre}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <!-- Background image -->
+                
+                <form class="grid text-center"form action="." method="post">{% csrf_token %}
+                    
+                        <div class="g-col-6 g-col-md-4">
+                            <p><strong>Descripcion</strong></p><br>
+                            {{evento.descripcion}}
+
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <p><strong>Provincia y localidad</strong></p><br>
+                            {{evento.provincia}}<br>{{evento.localidad}}
+                            
+                                
+                                
+                            
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+
+
+                        </div>
+                    
+                        
+                </form>
+            
+
+    {% include "base/footer.html" %}
+</body>
+</html>
