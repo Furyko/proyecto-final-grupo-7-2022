@@ -36,6 +36,9 @@ LOGIN_REDIRECT_URL = 'home'
 #LOGOUT_REDIRECT_URL = "home"
 
 DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
+TIME_INPUT_FORMATS = ('%H:%M')
+
+REDIRECT = 'eventos:listar'
 
 
 
