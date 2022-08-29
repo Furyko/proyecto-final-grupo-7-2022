@@ -1,4 +1,4 @@
-# proyecto-final-grupo-7-2022
+proyecto-final-grupo-7-2022
 Proyecto final para el "Informatorio Chaco: Etapa 2" del grupo 7, Comisión 4 del año 2022.
 
 Pasos para ejecutar el proyecto localmente:

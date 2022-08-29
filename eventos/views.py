@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 from pydoc import importfile
 from urllib import response
 from . import models
+=======
+from django.views.generic import ListView, CreateView
+>>>>>>> 61150a9d9c9cda5320d195c453dca808fc07f152
 from django.shortcuts import render
 import templates
 from django.http import HttpResponse
@@ -10,14 +14,16 @@ from .models import Document
 
 
 
-def Inicio(request):
-    template_name = "inicio.html"
-    return render(request, template_name, {})
+"""
+class eventosList(ListView):
+    model = eventos
+    template_name = 'eventos/listar.html'
 
-def Informacion(request):
-    template_name = "eventos_info.html"
-    return render(request, template_name, {})
+class eventosCreate(CreateView):
+    model = eventos
+    form_class = eventoForm
 
+<<<<<<< HEAD
 def Eventos(request):
     template_name = "eventos.html"
     return render(request, template_name, {})
@@ -83,3 +89,6 @@ def uploadFile(request):
         "subido": subido,
         
         })
+=======
+"""
+>>>>>>> 61150a9d9c9cda5320d195c453dca808fc07f152

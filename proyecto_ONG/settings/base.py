@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -22,6 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4#=qp+v&v=4_m2khixm)5bnh+2%_(durv*g_l4b55#3c8@sd0n'
 
+AUTH_USER_MODEL = "usuarios.Usuario"
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+#LOGOUT_REDIRECT_URL = "home"
+
+DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
+
 
 # Application definition
 
@@ -32,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios',
     'eventos',
+    'contacto',
+    
 ]
 
 MIDDLEWARE = [
@@ -65,7 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'proyecto_ONG.wsgi.application'
 
-AUTH_USER_MODEL = 'eventos.Usuario'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -118,3 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+

@@ -1,3 +1,4 @@
+
 from . import views
 from django.urls import path, include, re_path
 from django.conf import settings
@@ -7,6 +8,10 @@ from django.views.static import serve
 
 
 app_name = "Eventos"
+
+
+
+
 
 urlpatterns = [
    
@@ -20,6 +25,7 @@ urlpatterns = [
     path("recursos_subir/", views.uploadFile, name = "uploadFile"),    
 
 ]
+
 
 if settings.DEBUG: 
     urlpatterns += static(

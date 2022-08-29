@@ -7,3 +7,6 @@ admin.site.register(Modalidad)
 admin.site.register(Categoria)
 admin.site.register(Evento)
 admin.site.register(Document)
+
+
+# Register your models here.
