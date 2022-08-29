@@ -60,12 +60,14 @@ def uploadFile(request):
     if request.method == "POST":
         # Fetching the form data
         fileTitle = request.POST["fileTitle"]
+        descripcion = request.POST["descripcionArchivo"]
         uploadedFile = request.FILES["uploadedFile"]
 
         # Saving the information in the database
         document = models.Document(
             title = fileTitle,
-            uploadedFile = uploadedFile
+            uploadedFile = uploadedFile,
+            descripcion = descripcion,
         )
         document.save()
     
@@ -79,4 +81,5 @@ def uploadFile(request):
     return render(request, "recursos_subir.html", context = {
         "files": documents,
         "subido": subido,
+        
         })

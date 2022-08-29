@@ -43,6 +43,7 @@ class Document(models.Model):
     title = models.CharField(max_length = 50)
     uploadedFile = models.FileField(upload_to = 'media')
     dateTimeOfUpload = models.DateTimeField(auto_now = True)
+    descripcion =models.CharField(max_length = 100,blank=True, null=True)
     
     
     def __str__(self):

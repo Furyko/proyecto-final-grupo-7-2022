@@ -21,18 +21,34 @@
 <button 
 
 type="button" >
-<a class="btn btn-primary btn-block mb-4"  href="/recursos_subir">Subir archivos</a> 
+<a class="btn btn-primary"  href="/recursos_subir">Subir archivos</a> 
 </button>
 
-
 <br>
+{% for post in file %}
+    
+    <div class="container">
 
-    {% for post in file %}
-    <h2>{{post.title}}</h2>
-    <a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download</a>
-    {% endfor %}
+        <div class="row mx-5">
             
+            </div class="col-md-4"></div>                          
+                <div class="card"style="width: 18rem;" class=>
 
-    {% include "footer.html" %}
+                    <div class="row mx-5">        
+                        <div class="card-body">
+                            <h5 class="card-title">{{post.title}}</h5>          
+                            <a href="{{post.adminupload.url}}" class="btn btn-primary" download="{{post.adminupload.url}}">Descargar</a>
+                        </div>
+                    </div>                
+                        
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endfor %}
+
+{% include "footer.html" %}
 </body>
 </html>
