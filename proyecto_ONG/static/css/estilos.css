@@ -1,0 +1,82 @@
+.calendar-container {
+    padding: 1rem;
+    width: 100%;
+}
+
+.calendar {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.event-day button {
+    border: 1px solid orange;
+    width: 100%;
+    height: 100%;
+}
+
+.event-day ul {
+    display: none;
+}
+
+.event-day button:active {
+    border: 1px solid red;
+}
+
+.calendar-options form {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-selectables {
+    display: flex;
+    justify-content: space-around;
+}
+
+.calendar-submit {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Ventana modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000; /* Fallback */
+    background-color: #00000066;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* //Ventana modal// */

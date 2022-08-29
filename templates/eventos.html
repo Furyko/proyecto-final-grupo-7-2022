@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.html" %}
+<head>
+    {% load static %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    {% include "navbar.html" %}
+
+            <!-- Background image -->
+            <div class="p-5 text-center bg-image" style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
+                <div class="mask" style="background-color: rgba(218, 205, 205, 0.726);">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-black">
+                            <h1 class="mb-3">Eventos</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <!-- Background image -->
+            <div class="calendar-container">
+                <div class="calendar-options">
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="calendar-selectables">
+                            <select
+                            name="mes"
+                            id="mes"
+                            required>
+                                <option value="" disabled selected>Mes</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <select
+                            name="categoria"
+                            id="categoria">
+                                <option value="" disabled selected>Categorías disponibles</option>
+                                {% for i in categorias %}
+                                <option value="{{i.id}}">{{i.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="calendar-submit">
+                            <input type="submit" class="btn btn-danger" value="Filtrar">
+                        </div>
+                    </form>
+                </div>
+                {{ calendar|safe }}
+                <!-- Modal -->
+                <div id="event-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+    {% include "footer.html" %}
+</body>
+</html>
