@@ -16,3 +16,11 @@ def superuser_required():
                 raise PermissionDenied
             return f(request, *arg, **kwargs)
     return permission_required 
+"""""
+class AdminRequiredMixin:
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.es_administrador:
+            raise PermissionDenied
+        return super(SuperUserRequiredMixin, self).dispatch(request, *args, **kwargs)
+"""""

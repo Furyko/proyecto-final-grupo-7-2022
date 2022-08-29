@@ -1,11 +1,11 @@
 from re import template
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from contacto.models import Contacto
 from contacto.views import Contactos
 #from eventos.views import ViewEventos
-from . import views
+from .import views
 from django.views.generic.base import TemplateView
 #from django.urls import path, reverse_lazy
 from django.urls import include

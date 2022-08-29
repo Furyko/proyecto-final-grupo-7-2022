@@ -1,6 +1,6 @@
 #from .models import Categoria,Modalidad
 from django.db import models
-from proyecto_ONG.settings import DATE_INPUT_FORMATS,TIME_INPUT_FORMATS
+from proyecto_ONG.settings.local import DATE_INPUT_FORMATS,TIME_INPUT_FORMATS
 from usuarios.models import Usuario
 
 
@@ -26,8 +26,6 @@ class Modalidad(models.Model):
     nombre = models.CharField(max_length=50,null=True,blank=True,)
 
 
-
+"""
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50,null=True,blank=True,)
-
-"""

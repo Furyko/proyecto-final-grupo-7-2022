@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include "base/head.html" %}
+<head>
+    {% load static %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+</head>
 <body>
     {% include "base/navbar.html" %}
 
@@ -16,6 +20,52 @@
             </div>
             <br><br><br>
             <!-- Background image -->
+            <div class="calendar-container">
+                <div class="calendar-options">
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="calendar-selectables">
+                            <select
+                            name="mes"
+                            id="mes"
+                            required>
+                                <option value="" disabled selected>Mes</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <select
+                            name="categoria"
+                            id="categoria">
+                                <option value="" disabled selected>Categorías disponibles</option>
+                                {% for i in categorias %}
+                                <option value="{{i.id}}">{{i.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="calendar-submit">
+                            <input type="submit" class="btn btn-danger" value="Filtrar">
+                        </div>
+                    </form>
+                </div>
+                {{ calendar|safe }}
+                <!-- Modal -->
+                <div id="event-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
 
     {% include "base/footer.html" %}
 </body>

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from proyecto_ONG.settings import DATE_INPUT_FORMATS
+from proyecto_ONG.settings.local import DATE_INPUT_FORMATS
 
 class Usuario(AbstractUser):
     telefono = models.CharField(max_length=255, null=True, blank=True ,name="telefono")
