@@ -34,6 +34,8 @@
                             <td>{{eventos.nombre}}</td>
                             <td>{{eventos.lugar}}</td>
                             <td>{{eventos.precio}}</td>
+                            <td><a href="{% url 'eventos:actualizar' eventos.id %}">Editar</a></td>
+                            <td><a href="{% url 'eventos:eliminar' eventos.id %}">Eliminar</a></td>
                             
                             
                         </tr>

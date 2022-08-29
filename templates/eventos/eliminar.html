@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "base/head.html" %}
+<body>
+    {% include "base/navbar.html" %}
+
+            <!-- Background image -->
+            <div class="p-5 text-center bg-image" style="background-image: url('https://blog.oxfamintermon.org/wp-content/uploads/2014/11/ONG-copia-e1415635063990.jpg'); height: 200px; margin-top: 58px;">
+                <div class="mask" style="background-color: rgba(218, 205, 205, 0.726);">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-black">
+                            <h1 class="mb-3">Eliminar Eventos</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <!-- Background image -->
+                
+            <div class="grid text-center">
+                <div class="g-col-6 g-col-md-4"></div>
+                <div class="g-col-6 g-col-md-4">
+                    <form action="" method="post">{% csrf_token %}
+                        <p><strong>¿DESEA ELIMINAR EL EVENTO {{object}}?</strong></p>
+                        <button type="submit" class="btn btn-primary mb-3">Eliminar</button>  
+                    </form>
+                </div>
+                <div class="g-col-6 g-col-md-4"></div>
+            </div>
+            
+
+    {% include "base/footer.html" %}
+</body>
+</html>
