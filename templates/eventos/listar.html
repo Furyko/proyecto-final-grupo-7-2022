@@ -15,7 +15,9 @@
                 </div>
             </div>
             <br><br><br>
-            <a href="{% url 'eventos:crear' %}" class="btn btn-primary mb-3" >CREAR EVENTO</a>
+                
+                    <a href="{% url 'eventos:crear' %}" class="btn btn-primary mb-3" >CREAR EVENTO</a>
+               
             <!-- Background image -->
             <table class="table table-info">
                 <thead>
@@ -31,11 +33,11 @@
                     {% for eventos in eventos  %}
                         <tr>
                             <th scope="row">{{eventos.id}}</th>
-                            <td>{{eventos.nombre}}</td>
+                            <td>{{eventos.nombre}}<br><a href="{% url 'eventos:detalles' eventos.id %}">Detalles</a></td>
                             <td>{{eventos.lugar}}</td>
                             <td>{{eventos.precio}}</td>
-                            <td><a href="{% url 'eventos:actualizar' eventos.id %}">Editar</a></td>
-                            <td><a href="{% url 'eventos:eliminar' eventos.id %}">Eliminar</a></td>
+                            <td><a href="{% url 'eventos:actualizar' eventos.id %}">Editar</a><br><a href="{% url 'eventos:eliminar' eventos.id %}">Eliminar</a></td>
+                            
                             
                             
                         </tr>
@@ -44,8 +46,9 @@
                   
                   
                 </tbody>
+                
               </table>
-            
+                    {% include 'includes/paginador.html' %}
 
 
 

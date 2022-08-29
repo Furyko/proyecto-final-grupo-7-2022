@@ -1,20 +1,22 @@
 from django.urls import reverse
-from django.views.generic import ListView, CreateView,TemplateView,UpdateView,DeleteView,RedirectView
+from django.views.generic import ListView, CreateView,TemplateView,UpdateView,DeleteView,DetailView
 from django.shortcuts import render
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from core.mixins import SuperUserRequiredMixin
 from proyecto_ONG.settings import REDIRECT
 
-import eventos
 from .forms import EventoForm
-
+from django.core.exceptions import PermissionDenied
 from .models import Evento
 
 
 
-class Crear(CreateView):
+class Crear(LoginRequiredMixin,CreateView):
     model = Evento
     form_class = EventoForm
     template_name = "eventos/crear.html"
+
+    
 
     def get_success_url(self, **kwargs):
         return reverse('eventos:listar')
@@ -24,8 +26,12 @@ class Listar(ListView):
     model = Evento
     template_name = "eventos/listar.html"
     context_object_name = "eventos"
+    paginate_by:5
 
-class Actualizar(UpdateView):
+    def get_queryset(self):
+        return Evento.objects.all().order_by("id")
+
+class Actualizar(LoginRequiredMixin,UpdateView):
     model = Evento
     template_name = "eventos/actualizar.html"
     form_class = EventoForm
@@ -33,7 +39,7 @@ class Actualizar(UpdateView):
     def get_success_url(self, **kwargs):
         return reverse('eventos:listar')
 
-class Eliminar(DeleteView):
+class Eliminar(LoginRequiredMixin,DeleteView):
     model = Evento
     template_name = "eventos/eliminar.html"
     
@@ -41,7 +47,10 @@ class Eliminar(DeleteView):
     def get_success_url(self, **kwargs):
         return reverse('eventos:listar')
     
-
+class Detalles(LoginRequiredMixin,DetailView):
+    model = Evento
+    template_name = "eventos/detalles.html"
+    
 
 """
  class eventosList(ListView):

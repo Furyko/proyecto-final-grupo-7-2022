@@ -9,5 +9,5 @@ class EventoForm(forms.ModelForm):
     #precio = forms.CharField(widget=forms.TextInput(attrs={"class":"g-col-6 g-col-md-4"}))
     class Meta:
         model = Evento
-        fields = ["nombre","lugar","precio"]
+        fields = ["nombre","lugar","precio","descripcion","provincia","localidad"]
         

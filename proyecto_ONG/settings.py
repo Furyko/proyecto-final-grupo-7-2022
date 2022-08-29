@@ -36,6 +36,7 @@ LOGIN_REDIRECT_URL = 'home'
 #LOGOUT_REDIRECT_URL = "home"
 
 DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
+TIME_INPUT_FORMATS = ('%H:%M')
 
 REDIRECT = 'eventos:listar'
 
@@ -93,7 +94,7 @@ WSGI_APPLICATION = 'proyecto_ONG.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fundacion2',
+        'NAME': 'fundacion4',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',

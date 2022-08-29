@@ -1,7 +1,7 @@
 from django.contrib import admin
-#from eventos.models import Evento
 
-from usuarios.models import Usuario
+from .models import Evento
+from .models import Usuario
 
 
 #admin.site.register(Usuario)
